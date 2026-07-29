@@ -127,4 +127,4 @@ def run():
                 st.markdown(f'{distances[0].mean():.0f} poin')
 
     st.markdown('---')
-    st.markdown('**© 2026 Muhammad Izzat — Final Project**')
+    st.markdown('**© 2026 Nicholas Calvin — Final Project**')
