@@ -44,7 +44,7 @@ def main():
     st.sidebar.markdown('Rekomendasi Jurusan & Universitas')
     st.sidebar.markdown('Berdasarkan Nilai UTBK 2019 Saintek')
     st.sidebar.markdown('')
-    st.sidebar.markdown('by **Muhammad Izzat**')
+    st.sidebar.markdown('by **Nicholas Calvin**')
 
     if page == 'Home':
         show_home()
@@ -101,7 +101,7 @@ def show_home():
         """)
 
     st.markdown('---')
-    st.markdown('**© 2026 Muhammad Izzat — Final Project**')
+    st.markdown('**© 2026 Nicholas Calvin — Final Project**')
 
 
 if __name__ == '__main__':
