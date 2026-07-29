@@ -171,4 +171,4 @@ def run():
     """)
 
     st.markdown('---')
-    st.markdown('**© 2026 Muhammad Izzat — Final Project**')
+    st.markdown('**© 2026 Nicholas Calvin — Final Project**')
