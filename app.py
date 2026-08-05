@@ -1,7 +1,6 @@
 import sys
 import os
 
-# Tambah path biar bisa import eda.py & prediction.py dari folder yang sama
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import streamlit as st
@@ -31,7 +30,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    st.sidebar.markdown('<div class="sidebar-title">Your Major Recommendation</div>', unsafe_allow_html=True)
+    st.sidebar.markdown('<div class="sidebar-title">Major Recommendation</div>', unsafe_allow_html=True)
 
     page = st.sidebar.selectbox(
         'Pilih Halaman',
@@ -47,7 +46,7 @@ def main():
 
 
 def show_home():
-    st.title('Your Major Recommendation')
+    st.title('Major Recommendation')
     st.markdown('---')
 
     col1, col2 = st.columns([2, 1])
