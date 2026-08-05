@@ -94,4 +94,3 @@ def run():
                 st.markdown('**Distribusi Bidang dari 100 Tetangga Terdekat:**')
                 for cat, cnt in kategori_dist.items():
                     pct = cnt / total * 100
-                    st.markdown(f'{bar} {cat}: {cnt} siswa ({pct:.0f}%)')
