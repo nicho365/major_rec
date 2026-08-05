@@ -7,7 +7,6 @@ import os
 
 sns.set_style('whitegrid')
 
-# Path ke model pipeline
 PIPELINE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'your_major_recomendation_pipeline.pkl')
 ASSET_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,11 +16,7 @@ def load_model():
     return df
 
 def run():
-    st.title('📊 Exploratory Data Analysis (EDA)')
-    st.markdown('''
-    Halaman ini menampilkan eksplorasi data dari **86.569 siswa UTBK 2019 Saintek**
-    dengan **279 jurusan** dan **7 kategori bidang**.
-    ''')
+    st.title('Exploratory Data Analysis (EDA)')
     st.markdown('---')
 
     df = load_model()
@@ -32,7 +27,7 @@ def run():
     # ===================================================================
     # 1. DISTRIBUSI SISWA PER BIDANG (Kategori Jurusan)
     # ===================================================================
-    st.subheader('1️⃣ Distribusi Siswa per Bidang')
+    st.subheader('Distribusi Siswa per Bidang')
 
     st.image(os.path.join(ASSET_DIR, 'kategori_jurusan.jpeg'),
              caption='Kategori Jurusan — Distribusi siswa per bidang (Saintek)',
@@ -51,7 +46,7 @@ def run():
         st.markdown(f'**Tahun: 2019**')
 
     st.markdown("""
-    > 💡 **Insight:** **Teknik** (29,12%) mendominasi diikuti **Kesehatan** (26,04%) dan **Science** (22,38%).
+    > **Insight:** **Teknik** (29,12%) mendominasi diikuti **Kesehatan** (26,04%) dan **Science** (22,38%).
     > Ketiganya mencakup **77,54%** dari total siswa. Sementara **Sosial** (2,92%) paling sedikit diminati —
     > wajar karena dataset ini khusus Saintek.
     """)
@@ -61,7 +56,7 @@ def run():
     # ===================================================================
     # 2. RATA-RATA NILAI KESELURUHAN (AVG Nilai-Nilai)
     # ===================================================================
-    st.subheader('2️⃣ Rata-rata Nilai Keseluruhan (86.569 Siswa)')
+    st.subheader('Rata-rata Nilai Keseluruhan (86.569 Siswa)')
 
     st.image(os.path.join(ASSET_DIR, 'avg_nilai_nilai.jpeg'),
              caption='AVG Nilai-Nilai — Rata-rata 8 mata uji seluruh siswa',
@@ -79,12 +74,12 @@ def run():
             st.markdown(f'{i:>2}. **{subject}**: {val:.2f}')
     with col2:
         st.markdown('**Highlight:**')
-        st.markdown(f'📈 **Tertinggi**: {avg_list[0][0].replace("nilai_", "").upper()} ({avg_list[0][1]:.2f})')
-        st.markdown(f'📉 **Terendah**: {avg_list[-1][0].replace("nilai_", "").upper()} ({avg_list[-1][1]:.2f})')
-        st.markdown(f'📊 **Rata-rata total**: {avg_values.mean():.2f}')
+        st.markdown(f'**Tertinggi**: {avg_list[0][0].replace("nilai_", "").upper()} ({avg_list[0][1]:.2f})')
+        st.markdown(f'**Terendah**: {avg_list[-1][0].replace("nilai_", "").upper()} ({avg_list[-1][1]:.2f})')
+        st.markdown(f'**Rata-rata total**: {avg_values.mean():.2f}')
 
     st.markdown("""
-    > 💡 **Insight:** Nilai **KPU** (569,94) dan **KUA** (569,15) konsisten paling tinggi,
+    > **Insight:** Nilai **KPU** (569,94) dan **KUA** (569,15) konsisten paling tinggi,
     > sementara **Matematika** (529,49) dan **Biologi** (537,14) paling rendah.
     > Ini menarik karena Matematika sering dianggap mata uji tersulit di Saintek.
     """)
@@ -94,7 +89,7 @@ def run():
     # ===================================================================
     # 3. BOX PLOT — SEBARAN NILAI PER MATA UJI
     # ===================================================================
-    st.subheader('3️⃣ Sebaran Nilai per Mata Uji (Box Plot)')
+    st.subheader('Sebaran Nilai per Mata Uji (Box Plot)')
 
     st.image(os.path.join(ASSET_DIR, 'box_plot.jpeg'),
              caption='Box Plot Outlier Numeric — Sebaran nilai per mata uji',
@@ -111,7 +106,7 @@ def run():
     st.dataframe(stats_df, use_container_width=True)
 
     st.markdown("""
-    > 💡 **Insight:** Nilai maksimum mencapai **1.123** (Matematika — kemungkinan nilai bonus/eksperimen),
+    > **Insight:** Nilai maksimum mencapai **1.123** (Matematika — kemungkinan nilai bonus/eksperimen),
     > sementara nilai minimum ada di **193** (KPU). Box plot menunjukkan distribusi cukup simetris
     > dengan median di kisaran 520-570. Banyak outlier di atas, tapi jarang di bawah — artinya
     > siswa cenderung punya nilai tinggi di beberapa mata uji tertentu.
@@ -122,7 +117,7 @@ def run():
     # ===================================================================
     # 4. HEATMAP — RATA-RATA NILAI PER KATEGORI
     # ===================================================================
-    st.subheader('4️⃣ Rata-rata Nilai per Bidang (Heatmap)')
+    st.subheader('Rata-rata Nilai per Bidang (Heatmap)')
 
     st.image(os.path.join(ASSET_DIR, 'heatmap_kategori.jpeg'),
              caption='AVG Nilai Pada Kategori Jurusan — Rata-rata nilai per bidang',
@@ -139,7 +134,7 @@ def run():
     min_loc = avg_df.stack().idxmin()
 
     st.markdown(f"""
-    > 💡 **Insight:** **{max_loc[0]}** punya nilai rata-rata tertinggi di **{max_loc[1]}** ({max_val:.2f}),
+    > **Insight:** **{max_loc[0]}** punya nilai rata-rata tertinggi di **{max_loc[1]}** ({max_val:.2f}),
     > sementara **{min_loc[0]}** punya nilai terendah di **{min_loc[1]}** ({min_val:.2f}).
     > Menariknya, **Pendidikan** konsisten lebih rendah di hampir semua mata uji,
     > sementara **Teknik** dan **Kesehatan** mendominasi nilai-nilai tertinggi.
@@ -150,7 +145,7 @@ def run():
     # ===================================================================
     # 5. TOP JURUSAN PALING DIMINATI
     # ===================================================================
-    st.subheader('5️⃣ Jurusan Dengan Minat Terbanyak')
+    st.subheader('Jurusan Dengan Minat Terbanyak')
 
     st.image(os.path.join(ASSET_DIR, 'minat_terbanyak.jpeg'),
              caption='Jurusan Dengan Minat Terbanyak — Top 40 jurusan paling diminati',
@@ -163,12 +158,9 @@ def run():
     st.dataframe(top10, use_container_width=True, hide_index=True)
 
     st.markdown("""
-    > 💡 **Insight:** **PENDIDIKAN DOKTER** (≈6.000 siswa) menjadi jurusan paling diminati —
+    > **Insight:** **PENDIDIKAN DOKTER** (≈6.000 siswa) menjadi jurusan paling diminati —
     > hampir **2x lipat** dari **Teknik Sipil** (#2, ≈3.800). Menariknya, **Kedokteran** (≈1.700)
     > hanya di peringkat #12, menunjukkan siswa lebih memilih **Pendidikan Dokter** yang jenjangnya
     > lebih pendek. Jurusan IT/komputer seperti **Teknik Informatika** (#4, ≈3.000) dan
     > **Sistem Informasi** juga masuk 15 besar.
     """)
-
-    st.markdown('---')
-    st.markdown('**© 2026 Nicholas Calvin — Final Project**')
