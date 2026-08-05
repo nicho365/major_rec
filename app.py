@@ -16,7 +16,6 @@ import prediction
 
 st.set_page_config(
     page_title='Your Major Recommendation',
-    page_icon='🎓',
     layout='wide'
 )
 
@@ -32,19 +31,12 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    st.sidebar.markdown('<div class="sidebar-title">🎓 Your Major Recommendation</div>', unsafe_allow_html=True)
+    st.sidebar.markdown('<div class="sidebar-title">Your Major Recommendation</div>', unsafe_allow_html=True)
 
     page = st.sidebar.selectbox(
         'Pilih Halaman',
         ('Home', 'EDA', 'Prediksi')
     )
-
-    st.sidebar.markdown('---')
-    st.sidebar.markdown('**Final Project**')
-    st.sidebar.markdown('Rekomendasi Jurusan & Universitas')
-    st.sidebar.markdown('Berdasarkan Nilai UTBK 2019 Saintek')
-    st.sidebar.markdown('')
-    st.sidebar.markdown('by **Nicholas Calvin**')
 
     if page == 'Home':
         show_home()
@@ -55,7 +47,7 @@ def main():
 
 
 def show_home():
-    st.title('🎓 Your Major Recommendation')
+    st.title('Your Major Recommendation')
     st.markdown('---')
 
     col1, col2 = st.columns([2, 1])
@@ -95,14 +87,10 @@ def show_home():
 
         **Teknologi**
 
-        ⚡ K-Nearest Neighbors
-        📊 Streamlit
-        🐍 Python
+         K-Nearest Neighbors
+         Streamlit
+         Python
         """)
-
-    st.markdown('---')
-    st.markdown('**© 2026 Nicholas Calvin — Final Project**')
-
 
 if __name__ == '__main__':
     main()
