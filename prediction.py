@@ -94,4 +94,4 @@ def run():
                 st.markdown('**Distribusi Bidang dari 100 Tetangga Terdekat:**')
                 for rank, (jurusan, cnt) in enumerate(jurusan_rank.items(), start=1):
                     pct = cnt / total * 100
-                    st.markdown(f'{jurusan} — {cnt} siswa ({pct:.1f}%)')
+                    st.markdown(f'{rank}. {jurusan} — {cnt} siswa ({pct:.1f}%)')
