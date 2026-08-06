@@ -94,13 +94,4 @@ def run():
                 st.markdown('**Distribusi Bidang dari 100 Tetangga Terdekat:**')
                 for rank, (jurusan, cnt) in enumerate(jurusan_rank.items(), start=1):
                     pct = cnt / total * 100
-                    if rank == 1:
-                        icon = '🥇'
-                    elif rank == 2:
-                        icon = '🥈'
-                    elif rank == 3:
-                        icon = '🥉'
-                    else:
-                        icon = f'{rank}.'
-
-                    st.markdown(f'{icon} *{jurusan}* — {cnt} siswa ({pct:.1f}%)')
+                    st.markdown(f'{jurusan} — {cnt} siswa ({pct:.1f}%)')
