@@ -18,7 +18,7 @@ This project delivers an objective, data-driven alternative. By mapping an indiv
 * **Interactive UI:** Built and deployed using Streamlit for an accessible and responsive user experience.
 
 
-## 🛠️ Data & Machine Learning
+## Data & Machine Learning
 
 * **Dataset:** 86,000+ historical records from UTBK 2019 (Saintek stream).
 * **Algorithm:** K-Nearest Neighbors (KNN).
