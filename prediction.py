@@ -48,6 +48,10 @@ def run():
 
     st.markdown('---')
 
+    st.markdown(
+        "More infos and :star: at [github.com/nicho365/major_rec](https://github.com/nicho365/major_rec)"
+    )
+
     if st.button('Cari Rekomendasi', type='primary', use_container_width=True):
         with st.spinner('Mencari siswa dengan nilai paling mirip...'):
 
