@@ -164,3 +164,7 @@ def run():
     > lebih pendek. Jurusan IT/komputer seperti **Teknik Informatika** (#4, ≈3.000) dan
     > **Sistem Informasi** juga masuk 15 besar.
     """)
+
+    st.markdown(
+        "More infos and :star: at [github.com/nicho365/major_rec](https://github.com/nicho365/major_rec)"
+    )
