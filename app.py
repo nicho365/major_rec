@@ -72,6 +72,10 @@ def show_home():
         2. Buka halaman **Prediksi** untuk masukkan nilai dan lihat rekomendasi
         """)
 
+        st.markdown(
+            "More infos and :star: at [github.com/nicho365/major_rec](https://github.com/nicho365/major_rec)"
+        )
+
     with col2:
         st.markdown("""
         **Info Dataset**
@@ -91,9 +95,6 @@ def show_home():
          Python
         """)
 
-        st.markdown(
-            "More infos and :star: at [github.com/nicho365/major_rec](https://github.com/nicho365/major_rec)"
-        )
 
 if __name__ == '__main__':
     main()
